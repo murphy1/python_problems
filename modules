@@ -1,0 +1,86 @@
+# Exercises for Chapter 9 and Chapter 12
+
+# Create an arithmetic module
+# use 'from modules import *' in another python file to use these functions!!!
+
+def add(first_arg, *args):
+    result = first_arg
+    for arg in args:
+        result += arg
+
+    return result
+
+def subtract(first_arg, *args):
+    result = first_arg
+    for arg in args:
+        result -= arg
+
+    return result
+
+def divide(first_arg, *args):
+    result = first_arg
+    for arg in args:
+        result /= arg
+
+    return result
+
+def multiply(first_arg, *args):
+    result = first_arg
+    for arg in args:
+        result *= arg
+
+    return result
+
+# Create a length function that mimics len(). Should work for lists, dictionaries ans strings
+
+def length(obj):
+    count = 0
+    for object in obj:
+        count += 1
+
+    return count
+
+# Write a function that will calculate and return the n-th fibonacci number
+
+def fibonacci(num):
+    fibonacci_sequence = [1,1]
+    firstNum = 1
+    secondNum = 1
+    count = 0
+
+    while count < num + 1:
+        result = firstNum + secondNum
+        firstNum = secondNum
+        secondNum = result
+        count += 1
+
+        fibonacci_sequence.append(result)
+
+    nth_fibonacci_num = fibonacci_sequence[num-1]
+
+    return nth_fibonacci_num
+
+# Function that takes a filename. And will return the file in list form with each line as an element
+
+
+def read_file(file):
+    lst = []
+    with open(file, 'r') as lines:
+        for line in lines.readlines():
+            lst.append(line.strip())
+
+    return lst
+
+
+# Write a function called rep_all(). It takes 3 args. A list and 2 numbers. It will return a new list
+# With any occurrence of the first number replaced with the second number
+
+def rep_all(lst, num1 = 0, num2 = 0):
+    count = 0
+    while count < len(lst):
+        if lst[count] == num1:
+            lst[count] = num2
+        count += 1
+
+    return lst
+
