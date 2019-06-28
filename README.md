@@ -1,2 +1,2 @@
 # python_problems
-Working through problems from the slither into python e-book
+Working through problems while learning python
